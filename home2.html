@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Showcase - Muralis</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#14b8a6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300" data-transparent="true">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
+                            <i data-lucide="sparkles" class="text-secondary w-4 h-4 absolute -top-1 -right-1 group-hover:scale-125 transition-transform duration-300 delay-75"></i>
+                        </div>
+                        <span class="font-display font-bold text-2xl tracking-tighter text-white drop-shadow-md group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
+                    <a href="index.html" class="nav-link text-white/90">Home</a>
+                    <a href="home2.html" class="nav-link text-primary font-bold">Home 2</a>
+                    <a href="about.html" class="nav-link text-white/90">About</a>
+                    <a href="services.html" class="nav-link text-white/90">Services</a>
+                    <a href="pricing.html" class="nav-link text-white/90">Pricing</a>
+                    <a href="contact.html" class="nav-link text-white/90">Contact</a>
+                </nav>
+                <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="flex items-center border-r border-white/20 pr-4 mr-2 space-x-2 rtl:space-x-reverse">
+                        <button id="rtl-toggle" class="px-3 py-1 rounded-full border border-white/30 hover:bg-white/10 transition-colors text-white/80 text-xs font-bold tracking-wider">RTL</button>
+                        <button id="theme-toggle" class="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors">
+                            <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                        </button>
+                    </div>
+                    <a href="contact.html" class="btn-primary shadow-lg shadow-primary/30">Book a Wall</a>
+                </div>
+                <!-- Mobile button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full left-0 shadow-xl overflow-hidden transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Home</a>
+                <a href="home2.html" class="block px-3 py-4 text-base font-medium text-primary border-b border-slate-100 dark:border-slate-800">Home 2</a>
+                <a href="about.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">About</a>
+                <a href="services.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Services</a>
+                <a href="pricing.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Pricing</a>
+                <a href="contact.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300">Contact</a>
+                <div class="pt-4 flex items-center space-x-4">
+                    <a href="contact.html" class="btn-primary w-full">Book a Wall</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 1. Cinematic Hero with Overlay Animation -->
+        <section class="relative h-screen w-full overflow-hidden bg-black">
+            <!-- Scaling Image Animation -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/home2_hero.png" alt="Cinematic Hero" class="w-full h-full object-cover opacity-80 animate-[scaleUp_20s_ease-in-out_infinite_alternate]" style="transform-origin: center;">
+            </div>
+            <!-- Dramatic Overlay -->
+            <div class="absolute inset-0 z-0 bg-gradient-to-t from-dark via-dark/60 to-transparent"></div>
+            
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-24 sm:pt-0">
+                <p class="text-primary font-bold tracking-widest uppercase mb-4 reveal active">Exclusive Wall Art Commissions</p>
+                <h1 class="text-6xl md:text-8xl font-display font-black text-white mb-6 reveal active" style="transition-delay: 200ms;">
+                    Redefining <br> The <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-secondary">Canvas</span>
+                </h1>
+                <p class="text-xl text-slate-300 max-w-2xl reveal active" style="transition-delay: 400ms;">
+                    Award-winning muralist delivering premium, hyper-realistic, and abstract artworks for luxury spaces and visionary brands.
+                </p>
+                <div class="mt-10 flex gap-4 reveal active" style="transition-delay: 600ms;">
+                    <a href="#showcase" class="btn-primary text-lg px-10 py-4 shadow-xl shadow-primary/20">Explore Showcase</a>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes scaleUp {
+                    0% { transform: scale(1); }
+                    100% { transform: scale(1.15); }
+                }
+            </style>
+        </section>
+
+        <!-- 5. Client Logos -->
+        <section class="py-12 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <p class="text-center text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">Trusted by Visionary Brands</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="flex items-center gap-2 text-2xl font-display font-bold text-slate-800 dark:text-white"><i data-lucide="coffee" class="w-8 h-8"></i> Roast&Co</div>
+                    <div class="flex items-center gap-2 text-2xl font-display font-bold text-slate-800 dark:text-white"><i data-lucide="building-2" class="w-8 h-8"></i> Apex Real Estate</div>
+                    <div class="flex items-center gap-2 text-2xl font-display font-bold text-slate-800 dark:text-white"><i data-lucide="cpu" class="w-8 h-8"></i> Nexus Tech</div>
+                    <div class="flex items-center gap-2 text-2xl font-display font-bold text-slate-800 dark:text-white"><i data-lucide="music" class="w-8 h-8"></i> SoundWave</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Interactive Portfolio Showcase (Masonry-like) -->
+        <section id="showcase" class="py-24 bg-light dark:bg-dark">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-between items-end mb-16 reveal">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Curated Works</h2>
+                    </div>
+                    <a href="portfolio.html" class="hidden md:inline-flex items-center text-primary font-bold hover:text-orange-500 transition-colors">
+                        View All <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Large Feature -->
+                    <div class="col-span-1 md:col-span-8 group relative rounded-3xl overflow-hidden h-[500px] reveal stagger-1">
+                        <img src="assets/images/mural_gallery_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex flex-col justify-end p-10">
+                            <h3 class="text-3xl font-bold text-white mb-2">The Prism Initiative</h3>
+                            <p class="text-slate-300">Abstract Geometry • 2025</p>
+                        </div>
+                    </div>
+                    <!-- Smaller Feature -->
+                    <div class="col-span-1 md:col-span-4 group relative rounded-3xl overflow-hidden h-[500px] reveal stagger-2">
+                        <img src="assets/images/mural_gallery_3.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex flex-col justify-end p-10">
+                            <h3 class="text-2xl font-bold text-white mb-2">Neon Nights</h3>
+                            <p class="text-slate-300">Street Portraiture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Animated Stats Section -->
+        <section class="py-20 bg-primary dark:bg-slate-800 text-white relative overflow-hidden">
+            <div class="absolute right-0 top-0 opacity-10">
+                <i data-lucide="brush" class="w-96 h-96 -mt-20 -mr-20"></i>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center divide-x divide-white/20">
+                    <div class="reveal stagger-1">
+                        <div class="text-5xl font-black mb-2">250+</div>
+                        <div class="text-lg text-white/80 font-medium">Walls Painted</div>
+                    </div>
+                    <div class="reveal stagger-2">
+                        <div class="text-5xl font-black mb-2">12+</div>
+                        <div class="text-lg text-white/80 font-medium">Cities</div>
+                    </div>
+                    <div class="reveal stagger-3">
+                        <div class="text-5xl font-black mb-2">8+</div>
+                        <div class="text-lg text-white/80 font-medium">Years Experience</div>
+                    </div>
+                    <div class="reveal stagger-4">
+                        <div class="text-5xl font-black mb-2">100%</div>
+                        <div class="text-lg text-white/80 font-medium">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Case Study Preview -->
+        <section class="py-24 bg-white dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 relative reveal">
+                        <img src="assets/images/case_study_mural.png" alt="Case Study" class="rounded-3xl shadow-2xl w-full h-auto">
+                        <div class="absolute -bottom-8 right-0 lg:-right-8 glass p-6 rounded-2xl max-w-xs shadow-xl hidden lg:block">
+                            <p class="text-sm font-bold text-primary mb-1">Impact</p>
+                            <p class="text-slate-900 dark:text-white font-medium">Increased foot traffic by 45% in the first month.</p>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 reveal stagger-2">
+                        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Featured Case Study</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">The Grand Museum Commission</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">
+                            Tasked with revitalizing the central atrium of the National Modern Art Museum, we created a 5-story tall mural that integrates architectural history with contemporary fluid dynamics.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                                <i data-lucide="check-circle-2" class="text-secondary w-5 h-5"></i>
+                                <span>3 weeks of non-stop painting</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                                <i data-lucide="check-circle-2" class="text-secondary w-5 h-5"></i>
+                                <span>Over 150 gallons of premium acrylic</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                                <i data-lucide="check-circle-2" class="text-secondary w-5 h-5"></i>
+                                <span>Featured in Architectural Digest</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-secondary">Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Before/After Slider Section -->
+        <section class="py-24 bg-light dark:bg-dark">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 reveal">The Transformation</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto reveal">Drag the slider to see how a plain brick wall is brought to life.</p>
+                
+                <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl reveal aspect-[16/9]" id="ba-container">
+                    <!-- After Image (Background) -->
+                    <img src="assets/images/after_wall.png" alt="After" class="absolute inset-0 w-full h-full object-cover">
+                    
+                    <!-- Before Image (Clipped) -->
+                    <img src="assets/images/before_wall.png" alt="Before" class="absolute inset-0 w-full h-full object-cover before-image" style="clip-path: inset(0 50% 0 0);">
+                    
+                    <!-- Slider Input -->
+                    <input type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" id="ba-slider">
+                    
+                    <!-- Slider Handle Visual -->
+                    <div class="absolute top-0 bottom-0 w-1 bg-white z-10 pointer-events-none handle-line" style="left: 50%;">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg text-primary">
+                            <i data-lucide="code-2" class="w-6 h-6 rotate-90"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Premium CTA Section -->
+        <section class="py-24 relative bg-dark">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10 px-4 reveal">
+                <i data-lucide="sparkles" class="w-12 h-12 text-primary mx-auto mb-6"></i>
+                <h2 class="text-5xl font-display font-black text-white mb-6">Your Wall is a Blank Canvas. <br> Let's Make History.</h2>
+                <p class="text-xl text-slate-300 mb-10">Limited commission slots available for the upcoming quarter.</p>
+                <a href="contact.html" class="btn-primary text-xl px-12 py-5 rounded-full shadow-[0_0_40px_rgba(249,115,22,0.4)]">
+                    Secure Your Booking
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-6 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
+                            <i data-lucide="sparkles" class="text-secondary w-4 h-4 absolute -top-1 -right-1 group-hover:scale-125 transition-transform duration-300 delay-75"></i>
+                        </div>
+                        <span class="font-display font-bold text-2xl tracking-tighter text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
+                    </a>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-6">Premium mural artistry for those who want to turn their walls into stories. Based in New York, working worldwide.</p>
+                    <div class="flex space-x-4">
+                        <!-- Instagram -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#E4405F] hover:text-white transition-all duration-300 shadow-sm" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#1877F2] hover:text-white transition-all duration-300 shadow-sm" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <!-- Twitter/X -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#000000] hover:text-white transition-all duration-300 shadow-sm" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our Story</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Book a Mural</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4"></i> hello@muralis.com</li>
+                        <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4"></i> +1 (555) 000-0000</li>
+                        <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4"></i> Arts District, NYC</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-slate-500 text-sm">
+                <p>&copy; 2026 Muralis Art Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Paint Brush (Scroll to Top) -->
+    <button id="scroll-top-brush" class="brush-float group opacity-0 pointer-events-none transition-all duration-500" aria-label="Scroll to Top">
+        <i data-lucide="brush" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i>
+        <div class="brush-stroke"></div>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Before/After Slider Logic specific to this page
+        const slider = document.getElementById('ba-slider');
+        const beforeImg = document.querySelector('.before-image');
+        const handleLine = document.querySelector('.handle-line');
+        
+        if (slider && beforeImg && handleLine) {
+            slider.addEventListener('input', (e) => {
+                const val = e.target.value;
+                beforeImg.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+                handleLine.style.left = `${val}%`;
+            });
+        }
+
+        // Adjust Navbar for Home 2 specific dark hero
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass', 'shadow-sm', 'bg-dark/90');
+            } else {
+                header.classList.remove('glass', 'shadow-sm', 'bg-dark/90');
+            }
+        });
+    </script>
+</body>
+</html>

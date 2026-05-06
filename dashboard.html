@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Muralis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#14b8a6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300 antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col h-full transition-transform duration-300 absolute md:relative z-40 -translate-x-full md:translate-x-0">
+        
+        <!-- Logo -->
+        <div class="h-20 flex items-center px-6 border-b border-slate-200 dark:border-slate-700">
+            <a href="index.html" class="flex items-center gap-2">
+                <i data-lucide="palette" class="text-primary w-8 h-8"></i>
+                <span class="font-display font-bold text-2xl text-slate-900 dark:text-white">Muralis</span>
+            </a>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex-grow py-6 px-4 overflow-y-auto space-y-2">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl font-medium">
+                <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Overview
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50 rounded-xl font-medium transition-colors">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> Projects
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50 rounded-xl font-medium transition-colors justify-between">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="message-square" class="w-5 h-5"></i> Messages
+                </div>
+                <span class="bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">3</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50 rounded-xl font-medium transition-colors">
+                <i data-lucide="calendar" class="w-5 h-5"></i> Bookings
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50 rounded-xl font-medium transition-colors">
+                <i data-lucide="user" class="w-5 h-5"></i> Profile
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50 rounded-xl font-medium transition-colors">
+                <i data-lucide="settings" class="w-5 h-5"></i> Settings
+            </a>
+        </div>
+
+        <!-- Logout Bottom -->
+        <div class="p-4 border-t border-slate-200 dark:border-slate-700">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl font-medium transition-colors">
+                <i data-lucide="log-out" class="w-5 h-5"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col h-full w-full relative">
+        
+        <!-- Header Top Bar -->
+        <header class="h-20 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-6 z-30">
+            <div class="flex items-center gap-4">
+                <button id="sidebar-toggle" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <h1 class="text-xl font-bold text-slate-900 dark:text-white hidden sm:block">Welcome back, Mia 👋</h1>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <!-- Toggles -->
+                <button id="rtl-toggle" class="p-2 text-slate-500 hover:text-primary"><i data-lucide="arrow-left-right" class="w-5 h-5"></i></button>
+                <button id="theme-toggle" class="p-2 text-slate-500 hover:text-primary">
+                    <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                </button>
+
+                <!-- Notification -->
+                <button class="relative p-2 text-slate-500 hover:text-primary">
+                    <i data-lucide="bell" class="w-5 h-5"></i>
+                    <span class="absolute top-1 right-1 w-2.5 h-2.5 bg-primary rounded-full border-2 border-white dark:border-slate-800"></span>
+                </button>
+
+                <!-- Profile -->
+                <div class="flex items-center gap-3 border-l border-slate-200 dark:border-slate-700 pl-4">
+                    <img src="assets/images/artist_story.png" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="flex-1 overflow-y-auto p-6 lg:p-10 bg-slate-50 dark:bg-slate-900">
+            
+            <!-- Stats Overview -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <div class="glass bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-green-500 text-sm font-medium flex items-center gap-1"><i data-lucide="trending-up" class="w-4 h-4"></i> +12%</span>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-1">Active Projects</p>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">4</h3>
+                </div>
+
+                <div class="glass bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary/10 text-secondary flex items-center justify-center">
+                            <i data-lucide="dollar-sign" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-green-500 text-sm font-medium flex items-center gap-1"><i data-lucide="trending-up" class="w-4 h-4"></i> +8%</span>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-1">Monthly Revenue</p>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">$12,400</h3>
+                </div>
+
+                <div class="glass bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-500/10 text-purple-500 flex items-center justify-center">
+                            <i data-lucide="message-square" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-slate-400 text-sm font-medium">New</span>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-1">Unread Messages</p>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">7</h3>
+                </div>
+
+                <div class="glass bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center">
+                            <i data-lucide="calendar" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm font-medium mb-1">Upcoming Bookings</p>
+                    <h3 class="text-3xl font-bold text-slate-900 dark:text-white">2</h3>
+                </div>
+            </div>
+
+            <!-- Recent Projects Table -->
+            <div class="glass bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden mb-10">
+                <div class="p-6 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Recent Projects</h3>
+                    <a href="#" class="text-primary text-sm font-medium hover:underline">View All</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 text-sm">
+                                <th class="p-4 font-medium">Project Name</th>
+                                <th class="p-4 font-medium">Client</th>
+                                <th class="p-4 font-medium">Status</th>
+                                <th class="p-4 font-medium">Deadline</th>
+                                <th class="p-4 font-medium text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                            <tr>
+                                <td class="p-4 text-slate-900 dark:text-white font-medium">Geometric Cafe Wall</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Bean & Canvas</td>
+                                <td class="p-4"><span class="px-3 py-1 bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400 text-xs font-bold rounded-full">In Progress</span></td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Oct 24, 2026</td>
+                                <td class="p-4 text-right"><button class="text-slate-400 hover:text-primary"><i data-lucide="more-horizontal"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 text-slate-900 dark:text-white font-medium">TechNova Headquarters</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">TechNova Inc.</td>
+                                <td class="p-4"><span class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 text-xs font-bold rounded-full">Completed</span></td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Sep 15, 2026</td>
+                                <td class="p-4 text-right"><button class="text-slate-400 hover:text-primary"><i data-lucide="more-horizontal"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 text-slate-900 dark:text-white font-medium">Botanical Living Room</td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Private Client</td>
+                                <td class="p-4"><span class="px-3 py-1 bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 text-xs font-bold rounded-full">Designing</span></td>
+                                <td class="p-4 text-slate-600 dark:text-slate-400">Nov 02, 2026</td>
+                                <td class="p-4 text-right"><button class="text-slate-400 hover:text-primary"><i data-lucide="more-horizontal"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Sidebar Toggle for Mobile
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>

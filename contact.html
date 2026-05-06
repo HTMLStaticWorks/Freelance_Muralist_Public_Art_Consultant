@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Muralis</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#14b8a6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased flex flex-col min-h-screen">
+
+    <header id="main-header" class="fixed w-full top-0 z-50 bg-white dark:bg-slate-900 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
+                            <i data-lucide="sparkles" class="text-secondary w-4 h-4 absolute -top-1 -right-1 group-hover:scale-125 transition-transform duration-300 delay-75"></i>
+                        </div>
+                        <span class="font-display font-bold text-2xl tracking-tighter text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
+                    <a href="index.html" class="nav-link text-slate-700 dark:text-slate-300">Home</a>
+                    <a href="home2.html" class="nav-link text-slate-700 dark:text-slate-300">Home 2</a>
+                    <a href="about.html" class="nav-link text-slate-700 dark:text-slate-300">About</a>
+                    <a href="services.html" class="nav-link text-slate-700 dark:text-slate-300">Services</a>
+                    <a href="pricing.html" class="nav-link text-slate-700 dark:text-slate-300">Pricing</a>
+                    <a href="contact.html" class="nav-link text-primary dark:text-orange-400 font-bold">Contact</a>
+                </nav>
+                <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="flex items-center border-r border-slate-200 dark:border-slate-700 pr-4 mr-2 space-x-2 rtl:space-x-reverse">
+                        <button id="rtl-toggle" class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs font-bold tracking-wider">RTL</button>
+                        <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-900 dark:text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full left-0 shadow-xl overflow-hidden transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Home</a>
+                <a href="home2.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Home 2</a>
+                <a href="about.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">About</a>
+                <a href="services.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Services</a>
+                <a href="pricing.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Pricing</a>
+                <a href="contact.html" class="block px-3 py-4 text-base font-medium text-primary border-b border-slate-100 dark:border-slate-800">Contact</a>
+                <div class="pt-4 flex items-center space-x-4">
+                    <a href="contact.html" class="btn-primary w-full">Book a Wall</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero & Contact Form section -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-800/50 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 relative z-10 pt-12 sm:pt-0">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <!-- Left: Info -->
+                    <div class="reveal">
+                        <h1 class="text-5xl md:text-6xl font-display font-black text-slate-900 dark:text-white mb-6">Let's Create <br> Together</h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-10">Fill out the form to give us an idea of your project. The more details you provide, the better we can prepare for our initial consultation.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">Email Us</p>
+                                    <p class="text-slate-600 dark:text-slate-400">hello@muralis.art</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">Studio</p>
+                                    <p class="text-slate-600 dark:text-slate-400">123 Arts District, NY 10001</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="mt-12">
+                            <p class="text-sm font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">Follow our work</p>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-[#E4405F] hover:text-white hover:border-[#E4405F] transition-all duration-300 shadow-sm" aria-label="Instagram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300 shadow-sm" aria-label="Facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-[#000000] hover:text-white hover:border-[#000000] transition-all duration-300 shadow-sm" aria-label="Twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="glass p-8 md:p-10 rounded-3xl shadow-xl reveal stagger-2 bg-white dark:bg-slate-900">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">First Name</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-slate-900 dark:text-white" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Last Name</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-slate-900 dark:text-white" placeholder="Doe">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-slate-900 dark:text-white" placeholder="john@example.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Project Type</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-slate-900 dark:text-white">
+                                    <option>Commercial Interior</option>
+                                    <option>Commercial Exterior</option>
+                                    <option>Residential</option>
+                                    <option>Public Art / Community</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Approximate Wall Size (sq ft)</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-slate-900 dark:text-white" placeholder="e.g. 100 sq ft">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Project Details</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-slate-900 dark:text-white" placeholder="Tell us about your vision, location, and timeline..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full btn-primary py-4 text-lg">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Interactive Map Section -->
+        <section class="py-0 relative h-[400px] w-full overflow-hidden grayscale contrast-125 brightness-90 hover:grayscale-0 transition-all duration-700 reveal">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.238318181635!2d-74.004415!3d40.73061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25990264b3211%3A0xc3f8e52e46ef6a!2sWashington%20Square%20Park!5e0!3m2!1sen!2sus!4v1715012345678!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <!-- Map Overlay for Premium Look -->
+            <div class="absolute inset-0 pointer-events-none border-y-8 border-white dark:border-slate-900"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-6 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
+                            <i data-lucide="sparkles" class="text-secondary w-4 h-4 absolute -top-1 -right-1 group-hover:scale-125 transition-transform duration-300 delay-75"></i>
+                        </div>
+                        <span class="font-display font-bold text-2xl tracking-tighter text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
+                    </a>
+                    <p class="text-slate-600 dark:text-slate-400 max-sm mb-6">Premium mural artistry for those who want to turn their walls into stories. Based in New York, working worldwide.</p>
+                    <div class="flex space-x-4">
+                        <!-- Instagram -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#E4405F] hover:text-white transition-all duration-300 shadow-sm" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#1877F2] hover:text-white transition-all duration-300 shadow-sm" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <!-- Twitter/X -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#000000] hover:text-white transition-all duration-300 shadow-sm" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our Story</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Book a Mural</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4"></i> hello@muralis.com</li>
+                        <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4"></i> +1 (555) 000-0000</li>
+                        <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4"></i> Arts District, NYC</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-slate-500 text-sm">
+                <p>&copy; 2026 Muralis Art Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Paint Brush (Scroll to Top) -->
+    <button id="scroll-top-brush" class="brush-float group opacity-0 pointer-events-none transition-all duration-500" aria-label="Scroll to Top">
+        <i data-lucide="brush" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i>
+        <div class="brush-stroke"></div>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

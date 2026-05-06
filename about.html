@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About The Artist - Muralis</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316',
+                        secondary: '#14b8a6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="fixed w-full top-0 z-50 bg-transparent text-white transition-all duration-300" data-transparent="true">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
+                            <i data-lucide="sparkles" class="text-secondary w-4 h-4 absolute -top-1 -right-1 group-hover:scale-125 transition-transform duration-300 delay-75"></i>
+                        </div>
+                        <span class="font-display font-bold text-2xl tracking-tighter text-white group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
+                    </a>
+                </div>
+                <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
+                    <a href="index.html" class="nav-link text-white/90">Home</a>
+                    <a href="home2.html" class="nav-link text-white/90">Home 2</a>
+                    <a href="about.html" class="nav-link text-primary dark:text-orange-400 font-bold">About</a>
+                    <a href="services.html" class="nav-link text-white/90">Services</a>
+                    <a href="pricing.html" class="nav-link text-white/90">Pricing</a>
+                    <a href="contact.html" class="nav-link text-white/90">Contact</a>
+                </nav>
+                <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="flex items-center border-r border-white/20 pr-4 mr-2 space-x-2 rtl:space-x-reverse">
+                        <button id="rtl-toggle" class="px-3 py-1 rounded-full border border-white/30 hover:bg-white/10 transition-colors text-white/80 text-xs font-bold tracking-wider">RTL</button>
+                        <button id="theme-toggle" class="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors">
+                            <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+                            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                        </button>
+                    </div>
+                    <a href="contact.html" class="btn-primary">Book a Wall</a>
+                </div>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 absolute w-full left-0 shadow-xl overflow-hidden transition-all duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="index.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Home</a>
+                <a href="home2.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Home 2</a>
+                <a href="about.html" class="block px-3 py-4 text-base font-medium text-primary border-b border-slate-100 dark:border-slate-800">About</a>
+                <a href="services.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Services</a>
+                <a href="pricing.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Pricing</a>
+                <a href="contact.html" class="block px-3 py-4 text-base font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800">Contact</a>
+                <div class="pt-4 flex items-center space-x-4">
+                    <a href="contact.html" class="btn-primary w-full">Book a Wall</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 1. Hero with Background Image -->
+        <section class="relative h-[60vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/studio_image.png" alt="Studio Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[1px]"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 text-center relative z-10 reveal active pt-24 sm:pt-0">
+                <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary border border-primary/30 font-medium text-sm mb-6 backdrop-blur-sm">
+                    Our Story
+                </span>
+                <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6">The Mind Behind <br> The Colors</h1>
+                <p class="text-xl text-slate-200 max-w-2xl mx-auto font-light leading-relaxed">Transforming the world's concrete canvas into stories that resonate, inspire, and captivate.</p>
+            </div>
+        </section>
+
+        <!-- 2. Artist Story & 4. Studio Images combined -->
+        <section class="py-24 bg-white dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <img src="assets/images/artist_story.png" alt="Artist Portrait" class="rounded-3xl shadow-2xl w-full h-auto">
+                    </div>
+                    <div class="reveal stagger-2">
+                        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Hi, I'm Mia Vanguard.</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            My journey with art started not in a prestigious gallery, but on the streets. Equipped with just a few cans of spray paint and an insatiable desire to express myself, I found my voice on the sprawling brick walls of my hometown.
+                        </p>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                            Today, with over a decade of experience, my work bridges the gap between raw street energy and refined contemporary art. I believe that every wall has a pulse, and my job is to make it beat visibly for everyone to see.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="border-l-4 border-primary pl-4">
+                                <h4 class="text-2xl font-bold text-slate-900 dark:text-white">50+</h4>
+                                <p class="text-sm text-slate-500">Global Exhibitions</p>
+                            </div>
+                            <div class="border-l-4 border-secondary pl-4">
+                                <h4 class="text-2xl font-bold text-slate-900 dark:text-white">1M+</h4>
+                                <p class="text-sm text-slate-500">SqFt Painted</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section 1: Philosophy / Values -->
+        <section class="py-24 bg-slate-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#f97316,transparent_70%)]"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Core Philosophy</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto">Beyond the paint, we believe in creating experiences that transform how people feel in their spaces.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm reveal stagger-1">
+                        <div class="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-6">
+                            <i data-lucide="leaf" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Eco-Conscious</h3>
+                        <p class="text-slate-400">We exclusively use low-VOC, sustainable paints and materials to ensure every masterpiece is as kind to the planet as it is to the eye.</p>
+                    </div>
+                    
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm reveal stagger-2">
+                        <div class="w-12 h-12 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary mb-6">
+                            <i data-lucide="message-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Narrative Driven</h3>
+                        <p class="text-slate-400">Every project starts with a conversation. We don't just paint walls; we translate your unique narrative into a visual legacy.</p>
+                    </div>
+                    
+                    <div class="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm reveal stagger-3 sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none lg:mx-0">
+                        <div class="w-12 h-12 bg-orange-500/20 rounded-2xl flex items-center justify-center text-orange-500 mb-6">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Precision Craft</h3>
+                        <p class="text-slate-400">Blending traditional fine art techniques with modern street energy for a finish that is hyper-realistic and deeply emotive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Career Timeline -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-16 text-center reveal">Milestones</h2>
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-1/2 -translate-x-1/2 h-full w-px bg-slate-200 dark:bg-slate-700 hidden md:block"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- 2015 -->
+                        <div class="flex flex-col md:flex-row gap-8 items-center reveal">
+                            <div class="md:w-1/2 md:text-right">
+                                <span class="text-primary font-bold text-xl">2015</span>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1">First Solo Mural</h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-2">Commissioned by the City Arts Council to revitalize the abandoned subway entrance.</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900 z-10 hidden md:block"></div>
+                            <div class="md:w-1/2"></div>
+                        </div>
+                        <!-- 2019 -->
+                        <div class="flex flex-col md:flex-row gap-8 items-center reveal stagger-1">
+                            <div class="md:w-1/2"></div>
+                            <div class="w-4 h-4 rounded-full bg-secondary border-4 border-white dark:border-slate-900 z-10 hidden md:block"></div>
+                            <div class="md:w-1/2 md:text-left">
+                                <span class="text-secondary font-bold text-xl">2019</span>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1">International Tour</h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-2">Painted large-scale pieces in Berlin, Tokyo, and London as part of the Global Street Art Initiative.</p>
+                            </div>
+                        </div>
+                        <!-- 2024 -->
+                        <div class="flex flex-col md:flex-row gap-8 items-center reveal stagger-2">
+                            <div class="md:w-1/2 md:text-right">
+                                <span class="text-orange-500 font-bold text-xl">2024</span>
+                                <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Muralis Platform Launch</h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-2">Founded Muralis to connect artists with visionary brands and homeowners worldwide.</p>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-orange-500 border-4 border-white dark:border-slate-900 z-10 hidden md:block"></div>
+                            <div class="md:w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section 2: Global Recognition / Press -->
+        <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4">
+                <p class="text-center text-sm font-semibold text-slate-500 uppercase tracking-[0.3em] mb-12 reveal">Recognized In Global Media</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-500 reveal stagger-2">
+                    <div class="flex items-center gap-2 text-xl font-display font-bold text-slate-900 dark:text-white">
+                        <i data-lucide="award" class="w-6 h-6 text-primary"></i> AD Digest
+                    </div>
+                    <div class="flex items-center gap-2 text-xl font-display font-bold text-slate-900 dark:text-white">
+                        <i data-lucide="globe" class="w-6 h-6 text-primary"></i> Vogue Living
+                    </div>
+                    <div class="flex items-center gap-2 text-xl font-display font-bold text-slate-900 dark:text-white">
+                        <i data-lucide="newspaper" class="w-6 h-6 text-primary"></i> The NY Times
+                    </div>
+                    <div class="flex items-center gap-2 text-xl font-display font-bold text-slate-900 dark:text-white">
+                        <i data-lucide="star" class="w-6 h-6 text-primary"></i> Art Basel
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 py-16 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-6 group">
+                        <div class="relative w-10 h-10 flex items-center justify-center">
+                            <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
+                            <i data-lucide="sparkles" class="text-secondary w-4 h-4 absolute -top-1 -right-1 group-hover:scale-125 transition-transform duration-300 delay-75"></i>
+                        </div>
+                        <span class="font-display font-bold text-2xl tracking-tighter text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
+                    </a>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-6">Premium mural artistry for those who want to turn their walls into stories. Based in New York, working worldwide.</p>
+                    <div class="flex space-x-4">
+                        <!-- Instagram -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#E4405F] hover:text-white transition-all duration-300 shadow-sm" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#1877F2] hover:text-white transition-all duration-300 shadow-sm" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <!-- Twitter/X -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#000000] hover:text-white transition-all duration-300 shadow-sm" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our Story</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Book a Mural</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Contact</h4>
+                    <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4"></i> hello@muralis.com</li>
+                        <li class="flex items-center gap-3"><i data-lucide="phone" class="w-4 h-4"></i> +1 (555) 000-0000</li>
+                        <li class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4"></i> Arts District, NYC</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-slate-500 text-sm">
+                <p>&copy; 2026 Muralis Art Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Paint Brush (Scroll to Top) -->
+    <button id="scroll-top-brush" class="brush-float group opacity-0 pointer-events-none transition-all duration-500" aria-label="Scroll to Top">
+        <i data-lucide="brush" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i>
+        <div class="brush-stroke"></div>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

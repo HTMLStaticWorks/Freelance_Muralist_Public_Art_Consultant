@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
     // Dark Mode Toggle
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtns = document.querySelectorAll('#theme-toggle, .theme-toggle-btn');
     const htmlEl = document.documentElement;
     
     // Check local storage for theme
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlEl.classList.remove('dark');
     }
 
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             htmlEl.classList.toggle('dark');
             if (htmlEl.classList.contains('dark')) {
                 localStorage.setItem('theme', 'dark');
@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('theme', 'light');
             }
         });
-    }
+    });
 
     // RTL Toggle
-    const rtlToggleBtn = document.getElementById('rtl-toggle');
+    const rtlToggleBtns = document.querySelectorAll('#rtl-toggle, .rtl-toggle-btn');
     
     // Check local storage for direction
     if (localStorage.getItem('dir') === 'rtl') {
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlEl.classList.remove('dir-rtl');
     }
 
-    if (rtlToggleBtn) {
-        rtlToggleBtn.addEventListener('click', () => {
+    rtlToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             if (htmlEl.getAttribute('dir') === 'rtl') {
                 htmlEl.setAttribute('dir', 'ltr');
                 htmlEl.classList.remove('dir-rtl');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('dir', 'rtl');
             }
         });
-    }
+    });
 
     // Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (header) {
         const brandName = header.querySelector('.font-display');
         const navLinks = header.querySelectorAll('.nav-link:not(.text-primary)');
-        const actionIcons = header.querySelectorAll('#rtl-toggle, #theme-toggle, #mobile-menu-btn');
+        const actionIcons = header.querySelectorAll('#rtl-toggle, #theme-toggle, .rtl-toggle-btn, .theme-toggle-btn, #mobile-menu-btn');
         const isTransparentPage = header.getAttribute('data-transparent') === 'true';
 
         const updateHeaderStyle = () => {

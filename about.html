@@ -32,7 +32,7 @@
 <body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased flex flex-col min-h-screen">
 
     <!-- Header Navigation -->
-    <header id="main-header" class="fixed w-full top-0 z-50 bg-transparent text-white transition-all duration-300" data-transparent="true">
+    <header id="main-header" class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
@@ -45,17 +45,17 @@
                     </a>
                 </div>
                 <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
-                    <a href="index.html" class="nav-link text-white/90">Home</a>
-                    <a href="home2.html" class="nav-link text-white/90">Home 2</a>
-                    <a href="about.html" class="nav-link text-primary dark:text-orange-400 font-bold">About</a>
-                    <a href="services.html" class="nav-link text-white/90">Services</a>
-                    <a href="pricing.html" class="nav-link text-white/90">Pricing</a>
-                    <a href="contact.html" class="nav-link text-white/90">Contact</a>
+                    <a href="index.html" class="nav-link text-slate-700 dark:text-slate-300">Home</a>
+                    <a href="home2.html" class="nav-link text-slate-700 dark:text-slate-300">Home 2</a>
+                    <a href="about.html" class="nav-link text-primary font-bold">About</a>
+                    <a href="services.html" class="nav-link text-slate-700 dark:text-slate-300">Services</a>
+                    <a href="pricing.html" class="nav-link text-slate-700 dark:text-slate-300">Pricing</a>
+                    <a href="contact.html" class="nav-link text-slate-700 dark:text-slate-300">Contact</a>
                 </nav>
                 <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
-                    <div class="flex items-center border-r border-white/20 pr-4 mr-2 space-x-2 rtl:space-x-reverse">
-                        <button id="rtl-toggle" class="px-3 py-1 rounded-full border border-white/30 hover:bg-white/10 transition-colors text-white/80 text-xs font-bold tracking-wider">RTL</button>
-                        <button id="theme-toggle" class="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors">
+                    <div class="flex items-center border-r border-slate-200 dark:border-slate-700 pr-4 mr-2 space-x-2 rtl:space-x-reverse">
+                        <button id="rtl-toggle" class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs font-bold tracking-wider">RTL</button>
+                        <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                             <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
                             <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                         </button>
@@ -93,7 +93,7 @@
             </div>
             
             <div class="max-w-7xl mx-auto px-4 text-center relative z-10 reveal active pt-24 sm:pt-0">
-                <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary border border-primary/30 font-medium text-sm mb-6 backdrop-blur-sm">
+                <span class="inline-block py-1 px-3 rounded-full bg-primary text-white font-bold text-xs uppercase tracking-widest mb-6 shadow-lg shadow-primary/20">
                     Our Story
                 </span>
                 <h1 class="text-5xl md:text-7xl font-display font-black text-white mb-6">The Mind Behind <br> The Colors</h1>
@@ -108,7 +108,7 @@
                     <div class="reveal">
                         <img src="assets/images/artist_story.png" alt="Artist Portrait" class="rounded-3xl shadow-2xl w-full h-auto">
                     </div>
-                    <div class="reveal stagger-2">
+                    <div class="reveal stagger-2 text-center lg:text-left">
                         <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">Hi, I'm Mia Vanguard.</h2>
                         <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                             My journey with art started not in a prestigious gallery, but on the streets. Equipped with just a few cans of spray paint and an insatiable desire to express myself, I found my voice on the sprawling brick walls of my hometown.
@@ -116,7 +116,7 @@
                         <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                             Today, with over a decade of experience, my work bridges the gap between raw street energy and refined contemporary art. I believe that every wall has a pulse, and my job is to make it beat visibly for everyone to see.
                         </p>
-                        <div class="grid grid-cols-2 gap-6">
+                        <div class="grid grid-cols-2 gap-6 max-w-sm mx-auto lg:mx-0">
                             <div class="border-l-4 border-primary pl-4">
                                 <h4 class="text-2xl font-bold text-slate-900 dark:text-white">50+</h4>
                                 <p class="text-sm text-slate-500">Global Exhibitions</p>
@@ -261,6 +261,10 @@
                         <!-- Twitter/X -->
                         <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#000000] hover:text-white transition-all duration-300 shadow-sm" aria-label="Twitter">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                        <!-- Apple -->
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#555555] hover:text-white transition-all duration-300 shadow-sm" aria-label="Apple">
+                            <i data-lucide="apple" class="w-5 h-5"></i>
                         </a>
                     </div>
                 </div>

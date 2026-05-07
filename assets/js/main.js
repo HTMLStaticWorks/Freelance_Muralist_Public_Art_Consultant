@@ -149,6 +149,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+
+        if (question && answer && icon) {
+            question.addEventListener('click', () => {
+                const isOpen = !answer.classList.contains('hidden');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.faq-answer').classList.add('hidden');
+                        otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current item
+                if (isOpen) {
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        }
+    });
+
     // Final icon refresh to catch any late elements
     lucide.createIcons();
 });

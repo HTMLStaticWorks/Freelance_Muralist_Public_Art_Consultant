@@ -38,7 +38,7 @@
 <body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased font-sans flex flex-col min-h-screen">
 
     <!-- Header Navigation -->
-    <header id="main-header" class="fixed w-full top-0 z-50 bg-transparent text-white transition-all duration-300" data-transparent="true">
+    <header id="main-header" class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -114,7 +114,7 @@
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center pt-32 sm:pt-0">
                 <div class="max-w-4xl mx-auto reveal active">
-                    <span class="inline-block py-1 px-3 rounded-full bg-primary/20 text-primary border border-primary/30 font-medium text-sm mb-6 backdrop-blur-sm">
+                    <span class="inline-block py-1 px-3 rounded-full bg-primary text-white font-bold text-xs uppercase tracking-widest mb-6 shadow-lg shadow-primary/20">
                         Premium Custom Wall Art
                     </span>
                     <h1 class="text-5xl md:text-7xl font-display font-extrabold text-white leading-tight mb-6">
@@ -234,6 +234,33 @@
             </div>
         </section>
 
+        <!-- 3.1 Impact & Milestones (New Section 1) -->
+        <section class="py-20 bg-primary dark:bg-slate-800 text-white relative overflow-hidden">
+            <div class="absolute right-0 top-0 opacity-10 pointer-events-none">
+                <i data-lucide="brush" class="w-96 h-96 -mt-20 -mr-20"></i>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+                    <div class="reveal stagger-1">
+                        <div class="text-5xl font-black mb-2">250+</div>
+                        <div class="text-lg text-white/80 font-medium">Walls Painted</div>
+                    </div>
+                    <div class="reveal stagger-2">
+                        <div class="text-5xl font-black mb-2">15+</div>
+                        <div class="text-lg text-white/80 font-medium">Cities reached</div>
+                    </div>
+                    <div class="reveal stagger-3">
+                        <div class="text-5xl font-black mb-2">500+</div>
+                        <div class="text-lg text-white/80 font-medium">Gallons of Paint</div>
+                    </div>
+                    <div class="reveal stagger-4">
+                        <div class="text-5xl font-black mb-2">100+</div>
+                        <div class="text-lg text-white/80 font-medium">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 4. Process Section (Simplified) -->
         <section class="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -298,6 +325,62 @@
             </div>
         </section>
 
+        <!-- 5.1 Frequently Asked Questions (New Section 2) -->
+        <section class="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 dark:text-white mb-4">Common Questions</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Everything you need to know about the mural process and commissions.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden reveal stagger-1">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <span class="font-bold text-slate-900 dark:text-white">How long does a typical mural take?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/50">
+                            The timeline depends on size and complexity. A standard feature wall (approx. 10'x12') typically takes 3-5 days. Larger commercial exteriors can take 2-3 weeks.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden reveal stagger-2">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <span class="font-bold text-slate-900 dark:text-white">What kind of surfaces can you paint on?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/50">
+                            I can paint on almost anything: brick, concrete, drywall, wood, and even metal. Each surface requires specific preparation and primer to ensure longevity.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden reveal stagger-3">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <span class="font-bold text-slate-900 dark:text-white">Is the paint durable and weather-resistant?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/50">
+                            Absolutely. For exteriors, I use high-grade UV-resistant masonry paints and clear sealants that protect the artwork from fading, rain, and harsh weather for 10+ years.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden reveal stagger-4">
+                        <button class="faq-question w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                            <span class="font-bold text-slate-900 dark:text-white">How do you determine the price?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-primary transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-slate-600 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800/50">
+                            Pricing is based on square footage, complexity of design, surface condition, and location (travel/equipment). We provide a detailed quote after the initial consultation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- 6. Footer -->
@@ -325,6 +408,10 @@
                             <!-- Twitter/X -->
                             <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#000000] hover:text-white transition-all duration-300 shadow-sm" aria-label="Twitter">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                            </a>
+                            <!-- Apple -->
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#555555] hover:text-white transition-all duration-300 shadow-sm" aria-label="Apple">
+                                <i data-lucide="apple" class="w-5 h-5"></i>
                             </a>
                         </div>
                     </div>

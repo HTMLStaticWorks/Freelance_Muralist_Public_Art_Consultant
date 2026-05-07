@@ -32,7 +32,7 @@
 <body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased flex flex-col min-h-screen">
 
     <!-- Header Navigation -->
-    <header id="main-header" class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+    <header id="main-header" data-transparent="true" class="fixed w-full top-0 z-50 bg-transparent text-white transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
@@ -46,7 +46,7 @@
                 </div>
                 <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
                     <a href="index.html" class="nav-link text-slate-700 dark:text-slate-300">Home</a>
-                    <a href="home2.html" class="nav-link text-primary font-bold">Home 2</a>
+                    <a href="home2.html" class="nav-link text-primary">Home 2</a>
                     <a href="about.html" class="nav-link text-slate-700 dark:text-slate-300">About</a>
                     <a href="services.html" class="nav-link text-slate-700 dark:text-slate-300">Services</a>
                     <a href="pricing.html" class="nav-link text-slate-700 dark:text-slate-300">Pricing</a>
@@ -60,7 +60,7 @@
                             <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                         </button>
                     </div>
-                    <a href="contact.html" class="btn-primary shadow-lg shadow-primary/30">Book a Wall</a>
+                    <a href="contact.html" class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 1rem;">Book a Wall</a>
                 </div>
                 <!-- Mobile button -->
                 <div class="lg:hidden flex items-center">
@@ -131,11 +131,11 @@
         <!-- 2. Interactive Portfolio Showcase (Masonry-like) -->
         <section id="showcase" class="py-24 bg-light dark:bg-dark">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="flex justify-between items-end mb-16 reveal">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-16 reveal">
                     <div>
-                        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Curated Works</h2>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Curated Works</h2>
                     </div>
-                    <a href="portfolio.html" class="flex items-center text-primary font-bold hover:text-orange-500 transition-colors">
+                    <a href="portfolio.html" class="flex items-center text-primary font-bold hover:text-orange-500 transition-colors whitespace-nowrap">
                         View All <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
                     </a>
                 </div>
@@ -232,7 +232,7 @@
                     <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">The Art of Creation</h2>
                     <p class="text-lg text-slate-600 dark:text-slate-400">A systematic approach to bringing epic visions to life.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 reveal stagger-1">
                         <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
                             <i data-lucide="message-square" class="w-6 h-6"></i>
@@ -427,15 +427,7 @@
             });
         }
 
-        // Adjust Navbar for Home 2 specific dark hero
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('glass', 'shadow-sm', 'bg-dark/90');
-            } else {
-                header.classList.remove('glass', 'shadow-sm', 'bg-dark/90');
-            }
-        });
+
     </script>
 </body>
 </html>

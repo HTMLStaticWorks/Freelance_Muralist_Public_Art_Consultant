@@ -32,7 +32,7 @@
 <body class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 transition-colors duration-300 antialiased flex flex-col min-h-screen">
 
     <!-- Header Navigation -->
-    <header id="main-header" class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+    <header id="main-header" data-transparent="true" class="fixed w-full top-0 z-50 bg-transparent text-white transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
@@ -47,20 +47,20 @@
                 <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
                     <a href="index.html" class="nav-link text-slate-700 dark:text-slate-300">Home</a>
                     <a href="home2.html" class="nav-link text-slate-700 dark:text-slate-300">Home 2</a>
-                    <a href="about.html" class="nav-link text-primary font-bold">About</a>
+                    <a href="about.html" class="nav-link text-primary">About</a>
                     <a href="services.html" class="nav-link text-slate-700 dark:text-slate-300">Services</a>
                     <a href="pricing.html" class="nav-link text-slate-700 dark:text-slate-300">Pricing</a>
                     <a href="contact.html" class="nav-link text-slate-700 dark:text-slate-300">Contact</a>
                 </nav>
                 <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
                     <div class="flex items-center border-r border-slate-200 dark:border-slate-700 pr-4 mr-2 space-x-2 rtl:space-x-reverse">
-                        <button id="rtl-toggle" class="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs font-bold tracking-wider">RTL</button>
-                        <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <button id="rtl-toggle" class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs font-bold tracking-wider">RTL</button>
+                        <button id="theme-toggle" class="p-1.5 rounded-full text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                             <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
                             <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                         </button>
                     </div>
-                    <a href="contact.html" class="btn-primary">Book a Wall</a>
+                    <a href="contact.html" class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 1rem;">Book a Wall</a>
                 </div>
                 <div class="lg:hidden flex items-center">
                     <button id="mobile-menu-btn" class="p-2 rounded-md text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>

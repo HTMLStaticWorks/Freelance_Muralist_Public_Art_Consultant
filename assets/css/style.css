@@ -269,3 +269,82 @@
 .step-card h4, .step-card p {
     transform: translateZ(30px);
 }
+
+/* ==========================================
+   🌙 PREMIUM DARK MODE VISUAL STYLING
+   ========================================== */
+html.dark,
+html.dark body,
+html.dark .bg-dark,
+html.dark .dark\:bg-dark,
+html.dark .dark\:bg-slate-900,
+html.dark .dark\:bg-slate-950,
+.dark body,
+.dark .bg-dark,
+.dark .dark\:bg-dark,
+.dark .dark\:bg-slate-900,
+.dark .dark\:bg-slate-950 {
+    background-color: #000000 !important;
+}
+
+/* Premium Dark Grey Alternate Sections, Cards, and Panels */
+html.dark .dark\:bg-slate-800,
+html.dark .dark\:bg-slate-850,
+.dark .dark\:bg-slate-800,
+.dark .dark\:bg-slate-850 {
+    background-color: #121212 !important;
+}
+
+/* Semi-transparent alternate sections and card panels */
+html.dark .dark\:bg-slate-800\/30,
+.dark .dark\:bg-slate-800\/30 {
+    background-color: rgba(18, 18, 18, 0.3) !important;
+}
+
+html.dark .dark\:bg-slate-800\/50,
+.dark .dark\:bg-slate-800\/50 {
+    background-color: rgba(18, 18, 18, 0.5) !important;
+}
+
+html.dark .dark\:bg-slate-900\/50,
+.dark .dark\:bg-slate-900\/50 {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .dark\:bg-slate-900\/80,
+.dark .dark\:bg-slate-900\/80 {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+html.dark .dark\:bg-slate-900\/90,
+.dark .dark\:bg-slate-900\/90 {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+html.dark .dark\:bg-dark\/90,
+.dark .dark\:bg-dark\/90 {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Standardize Glass Panels globally for Dashboard / Cards */
+html.dark .glass-panel,
+.dark .glass-panel {
+    background: rgba(18, 18, 18, 0.65) !important;
+    border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Active buttons, borders, and interaction states in dark mode */
+html.dark .dark\:border-slate-800,
+.dark .dark\:border-slate-800 {
+    border-color: #1f1f22 !important;
+}
+
+html.dark .dark\:border-slate-700,
+.dark .dark\:border-slate-700 {
+    border-color: #2b2b30 !important;
+}
+
+html.dark .dark\:hover\:bg-slate-800:hover,
+.dark .dark\:hover\:bg-slate-800:hover {
+    background-color: #1f1f22 !important;
+}

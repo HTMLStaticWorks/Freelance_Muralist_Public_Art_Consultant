@@ -92,11 +92,14 @@
         <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-secondary/5 dark:bg-secondary/10 blur-[120px]"></div>
     </div>
 
+    <!-- Sidebar Overlay for Mobile -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-35 hidden xl:hidden transition-opacity duration-300 opacity-0"></div>
+
     <!-- Sidebar Navigation -->
     <aside id="sidebar" class="w-72 glass-panel border-r border-slate-200 dark:border-slate-800 flex flex-col h-full transition-transform duration-300 absolute xl:relative z-40 -translate-x-full xl:translate-x-0 shadow-xl xl:shadow-none">
         
         <!-- Logo -->
-        <div class="h-24 flex items-center px-8 border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="h-24 flex items-center justify-between px-8 border-b border-slate-200/50 dark:border-slate-800/50">
             <a href="index.html" class="flex items-center gap-3 group">
                 <div class="relative w-10 h-10 flex items-center justify-center">
                     <i data-lucide="palette" class="text-primary w-8 h-8 absolute group-hover:rotate-12 transition-transform duration-300"></i>
@@ -104,6 +107,9 @@
                 </div>
                 <span class="font-display font-bold text-2xl tracking-tighter text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">Muralis<span class="text-primary">.</span></span>
             </a>
+            <button id="sidebar-close" class="xl:hidden p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Close Sidebar">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
         </div>
 
         <!-- Nav Links -->
@@ -189,7 +195,7 @@
                 <!-- Toggles -->
                 <div class="flex items-center gap-2 border-r border-slate-200 dark:border-slate-700 pr-6">
                     <button id="rtl-toggle" class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xs font-bold tracking-wider" title="Toggle RTL">RTL</button>
-                    <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary transition-colors" title="Toggle Theme">
+                    <button id="theme-toggle" class="px-3 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center" title="Toggle Theme">
                         <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
                         <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                     </button>
@@ -531,14 +537,42 @@
         // Re-initialize Lucide Icons
         lucide.createIcons();
 
-        // Sidebar Toggle for Mobile
+        // Sidebar Toggle for Mobile/Tablet (360px, 768px, 1024px)
         const sidebar = document.getElementById('sidebar');
         const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarClose = document.getElementById('sidebar-close');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
         
-        if(sidebarToggle && sidebar) {
-            sidebarToggle.addEventListener('click', () => {
-                sidebar.classList.toggle('-translate-x-full');
-            });
+        const openSidebar = () => {
+            if (sidebar && sidebarOverlay) {
+                sidebar.classList.remove('-translate-x-full');
+                sidebarOverlay.classList.remove('hidden');
+                setTimeout(() => {
+                    sidebarOverlay.classList.add('opacity-100');
+                }, 10);
+            }
+        };
+
+        const closeSidebar = () => {
+            if (sidebar && sidebarOverlay) {
+                sidebar.classList.add('-translate-x-full');
+                sidebarOverlay.classList.remove('opacity-100');
+                sidebarOverlay.addEventListener('transitionend', function handler() {
+                    if (!sidebar.classList.contains('-translate-x-full')) return;
+                    sidebarOverlay.classList.add('hidden');
+                    sidebarOverlay.removeEventListener('transitionend', handler);
+                }, { once: true });
+            }
+        };
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', openSidebar);
+        }
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', closeSidebar);
+        }
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', closeSidebar);
         }
 
         // Initialize Chart.js
